@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound.jsx";
 import Header from "./components/Header.jsx";
 import Gallery from "./components/Gallery.jsx";
 import ImageContextProvider from "./context/ImageContext.jsx";
+import Time from "./components/Time.jsx"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <div className="container mx-auto my-28">
           <div className="mx-4 md:mx-40">
             <Header />
+            <Time />
             <Routes>
               <Route path="/" element={<Home />}>
                 <Route path=":slug" element={<Gallery />} />
