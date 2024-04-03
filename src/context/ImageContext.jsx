@@ -1,17 +1,18 @@
 import { createContext, useState } from "react";
+import API from "../config.jsx";
 
 export const ImageContext = createContext();
 
 const ImageContextProvider = (props) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [err, setErr] = useState("");
+  const [, setErr] = useState("");
   const [searchTerm, setSearchTerm] = useState("mountains");
   const handleClick = async () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        `https://api.unsplash.com/search/photos?client_id=${import.meta.env.VITE_UNSPLASH_API_KEY}&query=${searchTerm}&page=1&per_page=30`,
+        `https://api.unsplash.com/search/photos?client_id=${API}&query=${searchTerm}&page=12&per_page=25`,
         {
           method: "GET",
           headers: {

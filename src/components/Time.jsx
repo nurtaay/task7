@@ -1,12 +1,9 @@
-// PerformanceAnalysis.jsx
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 
 const PerformanceAnalysis = () => {
     const [appLoadTime, setAppLoadTime] = useState(0);
     useEffect(() => {
         const fetchPerformanceData = () => {
-            // Use Navigation Timing API to get the application load time
             const { loadEventEnd, navigationStart } = window.performance.timing;
             const appLoadTime = loadEventEnd - navigationStart;
             setAppLoadTime(appLoadTime);
